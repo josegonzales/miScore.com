@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Front extends CI_Controller {
+class TempController extends CI_Controller {
 
 	function __construct()
 	{
@@ -14,7 +14,7 @@ class Front extends CI_Controller {
 	
 	function _example_output($output = null)
 	{
-		$this->load->view('crearTorneo.html',$output);	
+		$this->load->view('renderTorneo.php',$output);	
 	}
 	
 	function offices()
@@ -29,7 +29,7 @@ class Front extends CI_Controller {
 		$this->_example_output((object)array('output' => '' , 'js_files' => array() , 'css_files' => array()));
 	}	
 	
-	function crearTorneo()
+	function film_management()
 	{
 		$crud = new grocery_CRUD();
 		
@@ -42,4 +42,3 @@ class Front extends CI_Controller {
 	}
 	
 }
-

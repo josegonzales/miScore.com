@@ -16,6 +16,11 @@ class Front extends CI_Controller {
 	{
 		$this->load->view('crearTorneo.html',$output);	
 	}
+
+	function _salidaMetEquipoTorneo($output = null)
+	{
+		$this->load->view('relacionarEquipos.html',$output);
+	}
 	
 	function offices()
 	{
@@ -39,6 +44,18 @@ class Front extends CI_Controller {
 		$output = $crud->render();
 		
 		$this->_example_output($output);
+	}
+	
+	function relacionarEquipos() 
+	{
+		$crud = new grocery_CRUD();
+		
+		$crud->set_table('torneo_has_equipo');
+		//$crud->fields('Torneo_idTorneo', 'Equipo_idEquipo');
+		$crud->set_field_upload('Torneo_idTorneo','Equipo_idEquipo');
+		$output = $crud->render();
+		
+		$this->_salidaMetEquipoTorneo($output);
 	}
 	
 }

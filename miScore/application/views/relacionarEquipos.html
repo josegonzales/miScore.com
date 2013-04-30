@@ -32,8 +32,6 @@
 	::moz-selection{ background-color: #E13300; color: white; }
 	::webkit-selection{ background-color: #E13300; color: white; }
 
-
-
 	a {
 		color: #003399;
 		background-color: transparent;
@@ -103,7 +101,29 @@
         <section id="built-with-less">
           <div class="page-header">
             <h2>Relacionar equipos</h2>
-            <?php echo $output; ?>
+            
+			<?php echo form_open('site/create');?>	
+			<p>
+				<label for="idEquipo">Equipo:</label>
+				<input type="text" name="title" id="title" />
+			</p>
+			
+			<p>
+				<label for="idTorneo">Torneo:</label>
+				<input type="text" name="content" id="content" />
+			</p>	
+			
+			<p>
+				<input type="submit" value="Relacionar equipos" />
+			</p>
+			<?php echo form_close(); ?>
+			
+			<?php echo form_open('site/agregar');?>		
+			<p>
+				En caso que quiera incluir un equipo que no esta re
+				<input type="submit" value="Agregar equipo" />
+			</p>
+			<?php echo form_close(); ?>			
           </div>
           
         </section>

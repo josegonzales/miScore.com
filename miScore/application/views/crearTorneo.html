@@ -19,13 +19,14 @@
       <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://www.advantech.co/miScore/assets/ico/apple-touch-icon-72-precomposed.png">
                     <link rel="apple-touch-icon-precomposed" href="http://www.advantech.co/miScore/assets/ico/apple-touch-icon-57-precomposed.png">
                                    <link rel="shortcut icon" href="http://www.advantech.co/miScore/assets/ico/favicon.png">
-<?php 
-foreach($css_files as $file): ?>
+	<?php 
+	foreach($css_files as $file): ?>
 	<link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
-<?php endforeach; ?>
-<?php foreach($js_files as $file): ?>
-	<script src="<?php echo $file; ?>"></script>
-<?php endforeach; ?>
+	<?php endforeach; ?>
+	<?php foreach($js_files as $file): ?>
+		<script src="<?php echo $file; ?>"></script>
+	<?php endforeach; ?>
+	
 	<style type="text/css">
 
 	::selection{ background-color: #E13300; color: white; }

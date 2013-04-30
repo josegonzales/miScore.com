@@ -39,22 +39,22 @@ class Front extends CI_Controller {
 		$crud = new grocery_CRUD();
 		
 		$crud->set_table('torneo');
-		$crud->fields('idTorneo', 'nombreTorneo');
+		$crud->fields('nombreTorneo');
 		
 		$output = $crud->render();
 		
 		$this->_example_output($output);
 	}
 	
-	function relacionarEquipos() 
+	function relacionarEquipos()
 	{
 		$crud = new grocery_CRUD();
-		
+	
 		$crud->set_table('torneo_has_equipo');
 		//$crud->fields('Torneo_idTorneo', 'Equipo_idEquipo');
 		$crud->set_field_upload('Torneo_idTorneo','Equipo_idEquipo');
 		$output = $crud->render();
-		
+	
 		$this->_salidaMetEquipoTorneo($output);
 	}
 	

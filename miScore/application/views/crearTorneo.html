@@ -106,11 +106,16 @@
           <div class="page-header">
             <h2>Torneos</h2>
             <?php echo $output; ?>
+			<?php echo form_open('front/crearTorneo');?>		
+			<p>
+				Ver la lista de torneos<br><br>
+				<input type="submit" value="Ver torneos" />
+			</p>
+			<?php echo form_close(); ?>	
           </div>       
         </section>
       </div>
     </div>
-
   </div>
 
     <footer class="footer">

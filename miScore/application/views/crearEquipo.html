@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -24,8 +24,9 @@
 	<link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
 	<?php endforeach; ?>
 	<?php foreach($js_files as $file): ?>
-	<script src="<?php echo $file; ?>"></script>
+		<script src="<?php echo $file; ?>"></script>
 	<?php endforeach; ?>
+	
 	<style type="text/css">
 
 	::selection{ background-color: #E13300; color: white; }
@@ -78,13 +79,14 @@
 		-webkit-box-shadow: 0 0 8px #D0D0D0;
 	}
 	</style>
+
   </head>
 
   <body data-spy="scroll" data-target=".bs-docs-sidebar">
 
 <header class="jumbotron subhead" id="overview" style="left: 0px; top: -39px; height: 150px">
   <div class="container">
-    <h1><span lang="es-co">MiScore.com</span></h1>
+    <h1>MiScore.com</h1>
     <p class="lead">Proyecto de Ingenieria de Software 2 - 2013-II</p>
   </div>
 </header>
@@ -100,32 +102,13 @@
       <div class="span9">
         <section id="built-with-less">
           <div class="page-header">
-            <h2>Relacionar equipos</h2>
-            
-			<?php echo form_open('front/crearTorneo');?>	
-			<p>
-				<label for="idEquipo">Equipo:</label>
-				<input type="text" name="title" id="title" />
-			</p>
-			<p>
-				<label for="idTorneo">Torneo:</label>
-				<input type="text" name="content" id="content" />
-			</p>				
-			<p>
-				<input type="submit" value="Relacionar equipos" />
-			</p>
-			<?php echo form_close(); ?>			
-			<?php echo form_open('front/crearEquipo');?>		
-			<p>
-				Ver la lista de equipos<br><br>
-				<input type="submit" value="Ver equipos" />
-			</p>
-			<?php echo form_close(); ?>			
-          </div>
-          
+            <h2>Equipos</h2>
+            <?php echo $output; ?>
+          </div>       
         </section>
       </div>
     </div>
+
   </div>
 
     <footer class="footer">

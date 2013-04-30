@@ -549,5 +549,7 @@ class grocery_CRUD_Model  extends CI_Model  {
     {
     	return $this->db->escape_str($value);
     }
+    
+    
 		
 }

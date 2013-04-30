@@ -12,27 +12,22 @@ class Front extends CI_Controller {
 		$this->load->library('grocery_CRUD');	
 	}
 	
-	function _example_output($output = null)
+	function _llamadoVistaCrearTorneo($output = null)
 	{
 		$this->load->view('crearTorneo.html',$output);	
 	}
-
+	
+	function _llamadoVistaCrearEquipo($output = null)
+	{
+		$this->load->view('crearEquipo.html',$output);
+	}
+	
 	function _salidaMetEquipoTorneo($output = null)
 	{
 		$this->load->view('relacionarEquipos.html',$output);
 	}
 	
-	function offices()
-	{
-		$output = $this->grocery_crud->render();
 
-		$this->_example_output($output);
-	}
-	
-	function index()
-	{
-		$this->_example_output((object)array('output' => '' , 'js_files' => array() , 'css_files' => array()));
-	}	
 	
 	function crearTorneo()
 	{
@@ -40,10 +35,24 @@ class Front extends CI_Controller {
 		
 		$crud->set_table('torneo');
 		$crud->fields('nombreTorneo');
-		
+		$crud->required_fields('nombreTorneo');
+		$crud->unset_delete();
 		$output = $crud->render();
 		
-		$this->_example_output($output);
+		$this->_llamadoVistaCrearTorneo($output);
+	}
+
+	function crearEquipo()
+	{
+		$crud = new grocery_CRUD();
+	
+		$crud->set_table('equipo');
+		$crud->fields('nombreEquipo');
+		$crud->required_fields('nombreEquipo');
+		$crud->unset_delete();
+		$output = $crud->render();
+	
+		$this->_llamadoVistaCrearEquipo($output);
 	}
 	
 	function relacionarEquipos()

@@ -12,6 +12,10 @@ class Front extends CI_Controller {
 		$this->load->library('grocery_CRUD');	
 	}
 	
+	/*
+	 *  
+	 */
+	
 	function _llamadoVistaCrearTorneo($output = null)
 	{
 		$this->load->view('crearTorneo.html',$output);	
